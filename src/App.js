@@ -1,10 +1,12 @@
 import React from "react";
 
+import Home from "@pages/Home";
+
 const App = () => {
   return (
-    <>
-      <h1>Hello The 8 Agency</h1>
-    </>
+    <React.StrictMode>
+      <Home />
+    </React.StrictMode>
   );
 };
 
