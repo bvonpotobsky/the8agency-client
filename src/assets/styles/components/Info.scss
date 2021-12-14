@@ -65,3 +65,37 @@
     }
   }
 }
+
+@media (min-width: $breakpoint-sm) {
+  .Info {
+    max-width: 64rem;
+    margin: 0 2rem;
+
+    &__description {
+      padding: 0 1rem;
+      p {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__speakers {
+      padding: 0 1rem;
+      .Info__speaker {
+        &__image {
+          width: 5.6rem;
+          height: 5.6rem;
+        }
+
+        &__content {
+          h3 {
+            font-size: 1.8rem;
+          }
+
+          p {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}

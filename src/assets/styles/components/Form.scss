@@ -47,3 +47,9 @@
     background-color: $color-green-dark;
   }
 }
+
+@media (min-width: $breakpoint-sm) {
+  .Form {
+    max-width: 62rem;
+  }
+}
