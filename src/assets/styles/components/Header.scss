@@ -26,14 +26,14 @@
     border-radius: 3px;
   }
 
-  .title {
+  &__title {
     margin-top: 0.8rem;
     font-size: 1.8rem;
     text-align: center;
     font-weight: 800;
   }
 
-  .subtitle {
+  &__subtitle {
     font-size: 1.6rem;
     text-align: center;
     font-weight: 800;
@@ -47,5 +47,45 @@
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
+  }
+}
+
+@media (min-width: $breakpoint-sm) {
+  .Header {
+    a {
+      font-size: 1.5rem;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__subtitle {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .Header {
+    a {
+      font-size: 1.6rem;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+    }
+
+    &__subtitle {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
   }
 }

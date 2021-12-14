@@ -7,8 +7,12 @@ const Header = () => {
     <header className="Header">
       <a href="#">Webinar</a>
 
-      <h1 className="title">El reto de humanizar el CX financiero en 2021</h1>
-      <h3 className="subtitle">La experiencia de un Unicornio de Latam</h3>
+      <h1 className="Header__title">
+        El reto de humanizar el CX financiero en 2021
+      </h1>
+      <h3 className="Header__subtitle">
+        La experiencia de un Unicornio de Latam
+      </h3>
 
       <p>Miércoles 16 de Diciembre | 17 hs (Horario de Quito)</p>
     </header>
