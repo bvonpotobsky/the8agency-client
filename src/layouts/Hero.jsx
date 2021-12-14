@@ -8,7 +8,7 @@ import "@styles/layouts/Hero.scss";
 const Hero = () => {
   return (
     <div className="Hero">
-      <main>
+      <main className="Main">
         <Info />
       </main>
 

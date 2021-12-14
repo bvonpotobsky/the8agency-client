@@ -44,12 +44,48 @@
     height: 4rem;
     border: none;
     color: $color-white;
+    font-weight: 600;
     background-color: $color-green-dark;
+    cursor: pointer;
   }
 }
 
 @media (min-width: $breakpoint-sm) {
   .Form {
     max-width: 62rem;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Form {
+    max-width: 100%;
+    max-height: 82rem;
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__group {
+      label {
+        font-size: 1.5rem;
+      }
+
+      input,
+      select {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__button {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .Form {
+    &__title {
+      font-size: 2rem;
+    }
   }
 }

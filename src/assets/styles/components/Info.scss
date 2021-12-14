@@ -99,3 +99,35 @@
     }
   }
 }
+
+@media (min-width: $breakpoint-lg) {
+  .Info {
+    padding: 0;
+    min-height: 84rem;
+    margin: 0;
+
+    &__banner {
+      width: 100%;
+
+      img {
+        margin: 0;
+        margin-left: 1rem;
+      }
+    }
+
+    &__description {
+      padding: 0;
+      p {
+        font-size: 1.6rem;
+        margin-bottom: 2.8rem;
+      }
+    }
+
+    &__speakers {
+      margin-bottom: 2.8rem;
+      .Info__speaker {
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,7 +1,36 @@
+@import "@styles/utils/_variables.scss";
+
 .Hero {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Hero {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 116rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+    margin-top: 8rem;
+  }
+
+  .Main {
+    width: 60%;
+  }
+
+  .Aside {
+    width: 40%;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .Hero {
+    padding: 0;
+  }
 }
