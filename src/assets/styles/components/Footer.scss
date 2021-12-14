@@ -1,0 +1,78 @@
+@import "@styles/utils/_variables.scss";
+
+.Footer {
+  width: 100%;
+  padding: 2.4rem 0;
+  border-top: 1px solid $color-grey-dark;
+  font-family: $font-main;
+  color: $color-green-dark;
+  background-color: $color-grey-light;
+
+  &__container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 1.2rem;
+    }
+
+    .socialMedia {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      & > * {
+        height: 2.4rem;
+        margin: 0 0.6rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .Footer {
+    width: 100%;
+    margin-top: 3.2rem;
+    border-top: 1px solid $color-grey-dark;
+
+    &__container {
+      flex-direction: row;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Footer {
+    margin-top: 3.2rem;
+    border-top: 0px;
+    padding: 4rem 0 6rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+      border-bottom: 1px solid rgba($color-grey-dark, 0.2);
+      max-width: 112.4rem;
+      padding-bottom: 1.6rem;
+      margin: 0 2rem;
+
+      p {
+        font-size: 1.6rem;
+      }
+
+      .socialMedia {
+        & > * {
+          height: 3.2rem;
+          margin: 0 1.2rem;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
