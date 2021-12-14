@@ -17,7 +17,7 @@
   }
 
   &__group {
-    margin-bottom: 1.6rem;
+    margin-bottom: 2rem;
 
     label {
       display: flex;
@@ -36,17 +36,28 @@
       font-size: 1.4rem;
       font-weight: 400;
       background-color: $color-white;
+
+      &:focus {
+        border: 2px solid $color-green-dark;
+      }
     }
   }
 
   &__button {
     margin-top: 1.4rem;
+    margin-bottom: 1.8rem;
     height: 4rem;
     border: none;
     color: $color-white;
     font-weight: 600;
     background-color: $color-green-dark;
     cursor: pointer;
+  }
+
+  &__submitting,
+  &__error {
+    transition: all 0.3s ease-in-out;
+    text-align: center;
   }
 }
 
