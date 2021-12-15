@@ -1,0 +1,81 @@
+@import "@styles/utils/_variables.scss";
+
+.Backoffice {
+  font-size: 1.6rem;
+  font-family: $font-main;
+  color: $color-green-dark;
+
+  &__container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  &__title {
+    width: 100%;
+    padding: 1.2rem 0;
+    text-align: center;
+    background-color: $color-orange;
+  }
+
+  &__counter {
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+
+  &__button {
+    display: block;
+    height: 4rem;
+    margin: 1.2rem auto;
+    padding: 0 1rem;
+    border: none;
+    color: $color-white;
+    font-weight: 600;
+    background-color: $color-green-dark;
+    cursor: pointer;
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+      display: flex;
+      justify-content: flex-start;
+      margin: 0 1.2rem;
+
+      & > * {
+        flex: 1;
+        padding: 0.8rem 0;
+        padding-left: 2rem;
+        font-weight: 600;
+        background-color: $color-grey-light;
+
+        &:not(:last-of-type) {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      margin: 0 1.2rem;
+
+      &--item {
+        display: flex;
+        justify-content: flex-start;
+
+        & > * {
+          flex: 1;
+          padding: 0.8rem 0;
+          padding-left: 2rem;
+          text-transform: capitalize;
+
+          &:not(:last-of-type) {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
