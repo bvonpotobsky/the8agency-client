@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
@@ -54,6 +54,20 @@ const Form = () => {
       }, 2000);
     }
   };
+
+  // Get Latam countries for select input
+  const [countries, setCountries] = useState([]);
+  useEffect(async () => {
+    try {
+      const response = await axios.get(
+        "https://restcountries.com/v2/regionalbloc/usan"
+      );
+
+      setCountries(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
 
   return (
     <>
@@ -116,10 +130,13 @@ const Form = () => {
           <label>
             País
             <select {...register("country", { required: true })}>
-              <option value="">Selecciona un país</option>
-              <option value="argentina">Argentina</option>
-              <option value="brasil">Brasil</option>
-              <option value="other">other</option>
+              <option value="">Selecciona un país:</option>
+              {countries.map((country) => (
+                <option key={country.name} value={country.translations.es}>
+                  {country.translations.es}
+                </option>
+              ))}
+              <option value="Otro">Otro</option>
             </select>
           </label>
           {errors.country && errors.country.type === "required" && (

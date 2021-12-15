@@ -85,7 +85,7 @@ const Backoffice = () => {
           </div>
         ) : (
           <div className="Backoffice__empty">
-            <p>No hay asistentes registrados</p>
+            <p>No hay asistentes registrados por el momento</p>
           </div>
         )}
       </div>

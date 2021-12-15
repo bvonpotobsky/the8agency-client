@@ -48,7 +48,7 @@ const Login = () => {
 
         <div className="Form__group">
           <label>
-            Correo electrónico del trabajo
+            Correo electrónico de administrador
             <input
               type="email"
               placeholder="johngalt@gmail.com"
