@@ -19,6 +19,24 @@ const Backoffice = () => {
     }
   }, []);
 
+  const downloadAssistants = async () => {
+    try {
+      const response = await axios.get("http://localhost:3005/api/v1/download");
+
+      const { data } = response;
+      const blob = new Blob([data], { type: "application/json" });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "assistants.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const qtyAssistants = assistants.length;
 
   return (
@@ -26,7 +44,9 @@ const Backoffice = () => {
       <div className="Backoffice__container">
         <h1 className="Backoffice__title">Lista de asistentes</h1>
 
-        <button className="Backoffice__button">Descargar lista</button>
+        <button onClick={downloadAssistants} className="Backoffice__button">
+          Descargar lista
+        </button>
 
         {assistants?.length > 0 ? (
           <div className="Backoffice__table">
