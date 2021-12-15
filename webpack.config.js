@@ -16,12 +16,13 @@ module.exports = {
   },
   mode: "production",
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".json"],
     alias: {
       "@pages": path.resolve(__dirname, "src/pages"),
       "@layouts": path.resolve(__dirname, "src/layouts"),
       "@components": path.resolve(__dirname, "src/components"),
       "@router": path.resolve(__dirname, "src/router"),
+      "@helpers": path.resolve(__dirname, "src/helpers"),
       "@styles": path.resolve(__dirname, "src/assets/styles"),
       "@fonts": path.resolve(__dirname, "src/assets/fonts"),
       "@images": path.resolve(__dirname, "src/assets/images"),
@@ -40,7 +41,7 @@ module.exports = {
         use: [{ loader: "html-loader" }],
       },
       {
-        test: /\.s[ac]ss$/,
+        test: /\.(scss|css)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
@@ -65,21 +66,21 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "index.html",
+      template: "./public/index.html",
+      filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "assets/styles/[name].[contenthash].css",
+      filename: "[name].css",
+      chunkFilename: "[id].css",
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src", "assets/images"),
-          to: "assets/images",
+          from: path.resolve(__dirname, "src", "assets/fonts"),
+          to: "assets/fonts",
         },
       ],
     }),
-    new Dotenv(),
     new CleanWebpackPlugin(),
   ],
   optimization: {

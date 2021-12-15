@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from "react";
+
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 
 import "@styles/pages/Backoffice.scss";
 
 const Backoffice = () => {
+  // Allow access just for logged users and their role is admin (if not logged, redirect to login page)
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/auth");
+    }
+  }, []);
+
   const [assistants, setAssistants] = useState([]);
 
   useEffect(async () => {
@@ -33,7 +45,7 @@ const Backoffice = () => {
       link.click();
       document.body.removeChild(link);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
